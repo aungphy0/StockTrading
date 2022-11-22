@@ -22,8 +22,11 @@ public class StocksController {
     }
 
     @GetMapping
-    public Flux<StockResponse> getAllStocks(){
-        return stockService.getAllStocks();
+    public Flux<StockResponse> getAllStocks(
+            @RequestParam(required = false, defaultValue = "0")
+            Double priceGreaterThan
+    ){
+        return stockService.getAllStocks(priceGreaterThan);
     }
 
     @PostMapping

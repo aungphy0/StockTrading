@@ -3,11 +3,13 @@ package com.springwebflux5.stocktrade.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Document
 public class Stock {
 
     @Id
